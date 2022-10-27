@@ -1,5 +1,5 @@
 from socket import fromshare
-from django.forms import forms
+from django import forms
 from menu.models import Persona, Animal
 
 class PersonaForm(forms.ModelForm):

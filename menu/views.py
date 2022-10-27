@@ -27,6 +27,13 @@ class CargarPersonas(View):
       form = self.form_class(initial=self.initial)
       return render(request, self.template_name, {"form": form})
 
+    def post(self, request):
+      form = self.form_class(request.POST)
+
+      if form.is_valid():
+        form.save()
+      return render(request, self.template_name, {"form":form})
+
 class CargarAnimales(View):
     template_name = "menu/carga_de_animales.html"
     form_class = AnimalForm
@@ -36,3 +43,9 @@ class CargarAnimales(View):
       form = self.form_class(initial=self.initial)
       return render(request, self.template_name, {"form": form})
     
+    def post(self, request):
+      form = self.form_class(request.POST)
+
+      if form.is_valid():
+        form.save()
+      return render(request, self.template_name, {"form":form})
