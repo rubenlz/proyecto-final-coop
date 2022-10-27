@@ -8,11 +8,11 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Carga de Animales </h1>
-  <form action="/animales/cargar" method="post" >
+  <h1>Actualizar Animal </h1>
+  <form action="/animales/actualizar/{{pk}}" method="post" >
     {% csrf_token %}
     {{form}}
-    <input type="submit" value="Cargar Animal">
+    <input type="submit" value="Actualizar">
 </body>
 
-</html>
+</html> 
