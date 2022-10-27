@@ -2,7 +2,7 @@ from re import template
 from django import views
 from django.shortcuts import render
 from django.views import View
-
+from menu.forms import PersonaForm, AnimalForm
 from menu.models import Animal, Persona
 
 class ListarPersonas(View):
@@ -21,3 +21,18 @@ class ListarAnimales(View):
 class CargarPersonas(View):
     template_name = "menu/carga_de_personas.html"
     form_class = PersonaForm
+    initial = {"nombre":"", "apellido": "",}
+
+    def get(self, request):
+      form = self.form_class(initial=self.initial)
+      return render(request, self.template_name, {"form": form})
+
+class CargarAnimales(View):
+    template_name = "menu/carga_de_animales.html"
+    form_class = AnimalForm
+    initial = {"Raza":"", "Alimentacion": "",}
+
+    def get(self, request):
+      form = self.form_class(initial=self.initial)
+      return render(request, self.template_name, {"form": form})
+    
