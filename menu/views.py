@@ -32,6 +32,7 @@ class CargarPersonas(View):
 
       if form.is_valid():
         form.save()
+        form = self.form_class(initial=self.initial)
       return render(request, self.template_name, {"form":form})
 
 class CargarAnimales(View):
@@ -48,4 +49,5 @@ class CargarAnimales(View):
 
       if form.is_valid():
         form.save()
+        form = self.form_class(initial=self.initial)
       return render(request, self.template_name, {"form":form})

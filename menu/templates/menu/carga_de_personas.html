@@ -9,7 +9,7 @@
 </head>
 <body>
   <h1>Carga de Personas </h1>
-  <form action="/personas/cargar method" method="post" >
+  <form action="/personas/cargar" method="post" >
     {% csrf_token %}
     {{form}}
     <input type="submit" value="Cargar Personas">

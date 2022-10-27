@@ -9,7 +9,8 @@
 </head>
 <body>
   <h1>Carga de Animales </h1>
-  <form action="/animales/cargar method" method="post" >
+  <form action="/animales/cargar" method="post" >
+    {% csrf_token %}
     {{form}}
     <input type="submit" value="Cargar Animales">
 </body>
