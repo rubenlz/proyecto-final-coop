@@ -9,7 +9,7 @@ class FamiliarList(ListView):
 class FamiliarCrear(CreateView):
   model = Persona
   success_url = "/panel-familia"
-  fields = ["nombre", "apellido"]
+  fields = ["nombre", "apellido", "fecha_de_nacimiento"]
 
 class PersonaBorrar(DeleteView):
   model = Persona
@@ -18,4 +18,4 @@ class PersonaBorrar(DeleteView):
 class PersonaActualizar(UpdateView):
   model = Persona 
   success_url = "/panel-familia"
-  fields = ["nombre", "apellido"]
+  fields = ["nombre", "apellido", "fecha_de_nacimiento"]
