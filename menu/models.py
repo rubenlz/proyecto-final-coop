@@ -4,9 +4,6 @@ from django.db import models
 # Create your models here.
 
 class Persona(models.Model):
-
-    template_name = "menu/lista_de_personas.html"
-
     nombre =models.CharField(max_length=10)
     apellido=models.CharField(max_length=10)
     fecha_de_nacimiento = models.DateField()

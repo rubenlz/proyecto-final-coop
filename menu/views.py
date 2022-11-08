@@ -4,6 +4,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import View
 from menu.forms import PersonaForm, AnimalForm
 from menu.models import Animal, Persona
+from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 
 class ListarPersonas(View):
     template_name="menu/lista_de_personas.html"
@@ -92,3 +93,21 @@ class ActualizarAnimales(View):
         form.save()
         form = self.form_class(initial=self.initial)
       return render(request, self.success_template)
+
+class FamiliarList(ListView):
+  model = Persona
+
+
+class FamiliarCrear(CreateView):
+  model = Persona
+  success_url = "/panel-familia"
+  fields = ["nombre", "apellido"]
+
+class PersonaBorrar(DeleteView):
+  model = Persona
+  success_url = "/panel-familia"
+
+class PersonaActualizar(UpdateView):
+  model = Persona 
+  success_url = "/panel-familia"
+  fields = ["nombre", "apellido"]

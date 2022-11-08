@@ -9,15 +9,14 @@
 </head>
 
 <body>
-
-  <h1> Lista de Personas </h1>
-
   <ul>
-    {% for person in persona %}
-    <li>{{person}}</li>
+
+    {% block buscar %} {% endblock %}
+
+    {% for persona in object_list %}
+    <li>{{persona}}</li>
     {% endfor %}
   </ul>
-
 
 </body>
 
