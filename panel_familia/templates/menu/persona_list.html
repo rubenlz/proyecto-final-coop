@@ -15,6 +15,8 @@
 
     {% for persona in object_list %}
     <li>{{persona}}</li>
+    <a href="{% url 'persona-borrar' persona.id %}">Borrar</a>
+    <a href="{% url 'persona-actualizar' persona.id %}">Actualizar</a>
     {% endfor %}
   </ul>
 
